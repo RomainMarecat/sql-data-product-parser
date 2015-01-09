@@ -5,7 +5,7 @@ BEGIN
 DECLARE city_expanded CHAR(255) ;
 set city_expanded = "";
 set postcode = SUBSTRING(postcode, -5, 2);
-set city_expanded = city + " (" + postcode + ")";
+set city_expanded = CONCAT(CONCAT(city, CONCAT(" (", postcode)), ")");
 RETURN city_expanded;
 END$$
 DELIMITER;
