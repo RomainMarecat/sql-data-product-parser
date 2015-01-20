@@ -3,7 +3,7 @@ DELIMITER $$
 CREATE FUNCTION available_for_mail_order_parser (available_for_mail_order tinyint(1)) RETURNS varchar(255)
 BEGIN
 DECLARE result LONGTEXT ;
-set result = '';
+set result = NULL;
 IF available_for_mail_order = 1 THEN
 	set result = 'product.mailorder.available';
 	RETURN result;
